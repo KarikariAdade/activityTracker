@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-md-9">
 	<form method="POST" action="{{ url('update-records') }}">
-		<div class="bg-white row m-4">
+		<div class="bg-white row m-4 update-records-form">
 			@csrf
 			<div class="form-group col-md-3">
 				<label>Status</label>
@@ -47,7 +47,7 @@
 					<option value="12">December</option>
 				</select>
 			</div>
-			<div class="col-md-2 text-center pt-2">
+			<div class="col-md-2 text-center pt-3">
 				<button class="btn btn-custom mt-4" type="submit">Filter</button>
 			</div>
 		</div>

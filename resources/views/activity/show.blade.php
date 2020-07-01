@@ -23,7 +23,7 @@
 			@foreach($activity_updates as $activity_update)
 			<div class="col-md-6">
 						<div class="profile-widget card">
-							<p>Update By: <span style="float: right;">Karikari Adade</span></p>
+							<p>Update By: <span style="float: right;">{{ $activity_update->user }}</span></p>
 							<p>Update Status: <span style="float: right;"><small class="badge badge-success">{{ $activity_update->update_status }}</small></span></p>
 							<p>Update Time <span style="float: right;">{{ $activity_update->created_at->format('h:ia') }}</span></p>
 							<h5 align="center" class="pt-4 pb-2">Update Remark</h5>

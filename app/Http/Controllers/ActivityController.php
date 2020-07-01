@@ -88,7 +88,7 @@ class activityController extends Controller
     public function show($id)
     {
         $date = Carbon::today();
-       $activity_updates = ActivityUpdates::whereDate('created_at', $date)->get();
+       $activity_updates = ActivityUpdates::whereDate('created_at', $date)->where('activity_id', $id)->get();
        // dd($activity_updates);
        $activity = Activity::findOrFail($id);
         return view('activity/show', compact('activity_updates', 'activity'));
@@ -135,7 +135,6 @@ class activityController extends Controller
             $update->user = $request->user;
             $update->update_remark = $request->activity_remark;
             $update->update_status = $request->activity_status;
-
             if ($update_activity && $update->save()) {
                 return redirect(url()->previous())->withSuccess('Activity updated successfully');
             }

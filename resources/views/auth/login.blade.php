@@ -39,7 +39,7 @@
                             <strong>{{ $message }}</strong>
                         </small>
                         @enderror
-                        <input type="password" name="password" placeholder="Password" id="password" required autofocus class="@error('email') is-invalid @enderror">
+                        <input type="password" name="password" placeholder="Password" id="password" required autofocus class="@error('password') is-invalid @enderror">
                         <small>
                             @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -59,31 +59,31 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <h2>{{ __('Sign Up') }}</h2>
-                        <input type="text" name="name" placeholder="Username">
+                        <input type="text" name="name" placeholder="Username" class="@error('name') is-invalid @enderror">
                         @error('name')
                         <small class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </small>
                         @enderror
-                        <input type="email" name="email" placeholder="Email Address" class="">
+                        <input type="email" name="email" placeholder="Email Address" class="@error('email') is-invalid @enderror">
                         @error('email')
                         <small class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </small>
                         @enderror
-                        <input type="password" name="password" placeholder="Create Password">
+                        <input type="password" name="password" placeholder="Create Password" class="@error('password') is-invalid @enderror">
                         @error('password')
                         <small class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </small>
                         @enderror
-                        <input type="password" name="password_confirmation" placeholder="Confirm Password">
+                        <input type="password" name="password_confirmation" placeholder="Confirm Password" class="@error('password') is-invalid @enderror">
                         @error('password_confirmation')
                         <small class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </small>
                         @enderror
-                        <button class="btn btn-custom login-btn" type="submit">{{ __('Sign Up') }}</button>
+                        <button class="btn btn-custom signup-btn" type="submit">{{ __('Sign Up') }}</button>
                         <p class="signup">Already have an account? <a href="#" onclick="return toggleForm();">Sign In</a></p>
                     </form>
                 </div>

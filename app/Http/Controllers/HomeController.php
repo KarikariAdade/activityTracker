@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Users;
+use App\Activity;
+use App\ActivityUpdates;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $activities = Activity::with('users')->paginate(5);
+        $users = Users::all();
+        $updates = ActivityUpdates::all();
+        return view('home', compact('activities', 'users', 'updates'));
     }
 }

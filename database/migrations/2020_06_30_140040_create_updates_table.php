@@ -16,7 +16,7 @@ class CreateUpdatesTable extends Migration
         Schema::create('activity_updates', function (Blueprint $table) {
             $table->id();
             $table->integer('activity_id');
-            $table->integer('user');
+            $table->string('user');
             $table->string('update_remark');
             $table->string('update_status');
             $table->timestamp('created_at')->nullable();

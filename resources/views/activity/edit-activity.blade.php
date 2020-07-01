@@ -17,7 +17,7 @@
       @endif
       </div>
       <div class="form-group col-md-6">
-        <input type="hidden" name="user" id="user" value="{{ $activities->user }}">
+        <input type="hidden" name="user" id="user" value="{{ Auth::user()->name }}">
         <input type="hidden" name="activity_id" id="activity_id" value="{{ $activities->id }}">
         <label>Activity Name</label>
         <input type="text" name="activity_name" id="activity_name" value="{{ $activities->name }}" class="form-control">
